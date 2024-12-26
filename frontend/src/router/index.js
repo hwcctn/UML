@@ -9,12 +9,15 @@ const routes = [
   },
   {
     path:'/',
-   
     name:"head",
     component:()=>import("../components/HelloWorld.vue")
-    
 },
-  
+  {
+    path:'/product',
+    name:"product",
+    component:()=>import("../views/user/index.vue")
+    
+  }
 ]
 
 const router = createRouter({
