@@ -10,7 +10,8 @@
             :merchant_id="product.merchant_id"
           />
           <!-- 购买按钮，绑定到当前商品 -->
-          <button @click="buyProduct(product)">购买</button>
+           
+          <button v-if="isBuy" @click="buyProduct(product)">购买</button>
         </div>
       </div>
     </div>
@@ -19,6 +20,9 @@
   <script setup>
   import ProductCard from './ProductCard.vue';
   import { useProductStore } from '@/stores/productStore';
+  defineProps({
+    isBuy:Boolean
+  })
   const productStore = useProductStore();
   let { products } = productStore;
   

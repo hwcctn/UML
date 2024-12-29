@@ -10,14 +10,24 @@ const routes = [
   {
     path:'/',
     name:"head",
-    component:()=>import("../components/HelloWorld.vue")
-},
-  {
-    path:'/product',
-    name:"product",
-    component:()=>import("../views/user/index.vue")
+    component:()=>import("../views/Layout/index.vue"),
+    children:[
+      {
+        path:'/product',
+        name:"product",
+        component:()=>import("../views/user/index.vue")
+        
+      },
+      {
+        path:'/merchant',
+        name:"merchant",
+        component:()=>import("../views/merchant/index.vue")
+        
+      }
+    ]
     
-  }
+},
+  
 ]
 
 const router = createRouter({
