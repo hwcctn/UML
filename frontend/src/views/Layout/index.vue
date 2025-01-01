@@ -39,7 +39,7 @@ import Content from './Content.vue';
 
 
 .Main{
-background-color:#f4f4f5; 
+background-color:#f8f8f8; 
 width: 100%;
 padding: 0;
 height:calc(100vh - 100px);

@@ -33,18 +33,26 @@
 <script setup>
 import { useProductStore } from '@/stores/productStore';
 import ProductList from '@/components/product/ProductList.vue';
+import api from '@/api';
+import { onMounted } from 'vue';
 const productStore = useProductStore();
 const { setProducts } = productStore;
-const newProducts = [
-  { description: '高端显示器', price: 4999, merchant_id: 201 },
-  { description: '游戏键盘', price: 1299, merchant_id: 202 },
-  { description: '机械鼠标', price: 699, merchant_id: 203 },
-  { description: '机械鼠标', price: 699, merchant_id: 203 },
-  { description: '机械鼠标', price: 699, merchant_id: 203 },
-  { description: '机械鼠标', price: 699, merchant_id: 203 },
-  { description: '机械鼠标', price: 699, merchant_id: 203 },
-];
-setProducts(newProducts)
+let newProducts = [];
+const getProducts = async () => {
+  try {
+    const response = await api.getAllProducts();
+    console.log("商品列表:", response.data);
+    newProducts=response.data
+    setProducts(newProducts);
+  } catch (error) {
+    console.error("获取商品列表失败:", error);
+  }
+};
+onMounted(()=>{
+    getProducts();
+    
+})
+
 </script>
 
 <style scoped>

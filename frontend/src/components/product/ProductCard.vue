@@ -1,6 +1,6 @@
 <template>
   <div class="product-card">
-    <p><strong>商品描述：</strong>{{ description }}</p>
+    <p><strong>商品描述：</strong>{{ name }}</p>
     <p><strong>商品价格：</strong>{{ price }}￥</p>
     <p><strong>商家ID：</strong>{{ merchant_id }}</p>
   </div>
@@ -8,7 +8,7 @@
 
 <script setup>
 defineProps({
-    description:{
+    name:{
         type:String,
         required:true,
     },

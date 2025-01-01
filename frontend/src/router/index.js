@@ -10,20 +10,41 @@ const routes = [
   {
     path:'/',
     name:"head",
+    redirect:'/product',
     component:()=>import("../views/Layout/index.vue"),
     children:[
       {
         path:'/product',
         name:"product",
-        component:()=>import("../views/user/index.vue")
+        component:()=>import("../views/user/Shopping.vue")
         
+      },
+      {
+        path:'/my-order',
+        name:"myOrder",
+        component:()=>import("../views/user/OrderForm.vue")
       },
       {
         path:'/merchant',
         name:"merchant",
-        component:()=>import("../views/merchant/index.vue")
-        
+        redirect:'/merchant/warehouse',
+        component:()=>import("../views/merchant/index.vue"),
+        children:[
+         {
+          path:'/merchant/warehouse',
+          name:"warehouse",
+          component:()=>import("../views/merchant/Warehouse.vue"),
+         },
+         {
+          path:'/merchant/order-merchant',
+          name:"order-merchant",
+          component:()=>import("../views/merchant/OrderForm.vue"),
+         }
+
+        ]
+
       }
+      
     ]
     
 },

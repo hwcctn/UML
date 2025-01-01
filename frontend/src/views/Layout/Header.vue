@@ -7,8 +7,8 @@
       </el-icon>
       购物商城
     </el-menu-item>
-    <el-menu-item index="/merchant">我的商品</el-menu-item>
-    <el-menu-item index="2">我的订单</el-menu-item>
+    <el-menu-item index="/merchant">我的店铺</el-menu-item>
+    <el-menu-item index="/my-order">我的订单</el-menu-item>
     <el-menu-item index="3">帮助中心</el-menu-item>
 
 
