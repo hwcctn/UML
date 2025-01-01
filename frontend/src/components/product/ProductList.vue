@@ -73,10 +73,12 @@ const buyProduct = async (product) => {
       userId: user_id,
       amount: product.price,
       merchantId: product.merchant_id, 
+      productId:product.id
     }
     console.log(queryParams);
     
     const response = await api.createOrder(queryParams);
+    alert('购买成功')
     console.log('购买成功',response.data);
     
   }

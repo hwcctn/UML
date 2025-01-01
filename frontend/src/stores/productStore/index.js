@@ -1,5 +1,5 @@
 import {defineStore} from 'pinia'
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 export const useProductStore=defineStore('product',()=>{
     let products=reactive([
         { id:1,name: '优质手机', price: 3999, merchant_id: 101 },
@@ -7,6 +7,7 @@ export const useProductStore=defineStore('product',()=>{
         { id:3,name: '无线耳机', price: 999, merchant_id: 103 },
     ])
     const setProducts = (newProducts) => {
+        // products.value=newProducts
         products.splice(0, products.length, ...newProducts); // 一步清空并替换
       };
     

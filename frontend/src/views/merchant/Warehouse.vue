@@ -81,7 +81,7 @@ const formRef = ref(null)
 let Products = [];
 const addProduct=async ()=>{
   try{
-    const response=await api.createProduct({merchant_id: 203 ,...newProduct.value})
+    const response=await api.createProduct({merchant_id: 38 ,...newProduct.value})
     console.log('添加成功',response.data);
     addProductVisible.value = false; // 关闭对话框
     setProducts([...Products, response.data]);

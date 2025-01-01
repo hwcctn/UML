@@ -13,9 +13,9 @@ const getOders= async()=>{
     try{
         let UserId=44
         const response =await api.getUserOrders(UserId);
-        console.log(response.data);
+        // console.log(response.data.orders);
         
-        const orders = response.data
+        const orders = response.data.orders
         setOrders(orders);
     }
     catch(err){
